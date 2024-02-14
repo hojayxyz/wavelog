@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { SidebarContext } from "./AppLayout";
 
-function Header({ showSidebar, handleClick }) {
+function Header() {
+  const { showSidebar, handleClick } = useContext(SidebarContext);
   return (
     <header className="col-span-12 flex items-center justify-between border-b-2 border-gray-100 bg-blue-200 p-4">
       <Link to="/" className=" text-blue-500 hover:text-blue-600">

@@ -1,9 +1,9 @@
 import {
-  BrowserRouter,
-  Navigate,
-  Route,
+  // BrowserRouter,
+  // Navigate,
+  // Route,
+  // Routes,
   RouterProvider,
-  Routes,
   createBrowserRouter,
 } from "react-router-dom";
 import Login from "./pages/Login";
