@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="feed" />} />
+          <Route path="/" element={<Navigate replace to="feed" />} />
           <Route path="feed" element={<Feed />} />
           <Route path="login" element={<Login />} />
         </Route>
