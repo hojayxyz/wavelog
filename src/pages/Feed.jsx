@@ -1,5 +1,5 @@
 function Feed() {
-  return <div>Feed</div>;
+  return <div className="p-5">Feed</div>;
 }
 
 export default Feed;
