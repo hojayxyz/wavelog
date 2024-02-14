@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { SidebarContext } from "./AppLayout";
+import { SidebarContext } from "../context/SidebarContext";
 
 function Header() {
   const { showSidebar, handleClick } = useContext(SidebarContext);

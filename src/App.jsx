@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Feed from "./pages/Feed";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
+import { SidebarProvider } from "./context/SidebarContext";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <SidebarProvider>
+      <RouterProvider router={router} />
+    </SidebarProvider>
+  );
 }
 
 // function App() {
