@@ -17,6 +17,11 @@ function Sidebar() {
                 </Link>
               </li>
               <li>
+                <Link to="/blog" className="text-blue-500 hover:text-blue-600">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/friendslist"
                   className="text-blue-500 hover:text-blue-600"
