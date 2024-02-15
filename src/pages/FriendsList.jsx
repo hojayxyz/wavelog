@@ -8,7 +8,7 @@ function FriendsList() {
 
   return (
     <div>
-      <div className="flex flex-col">
+      <div className="mb-5 flex flex-col">
         {friendsList.map((friend) => (
           <div className="my-1 flex space-x-3" key={friend.id}>
             <img src={friend.imgURL} alt={friend.name} />

@@ -3,7 +3,7 @@ function Home() {
   const greetPerson = import.meta.env.TESTO;
   console.log(`Say hello: ${greetPerson}`);
   return (
-    <div className="p-5">
+    <div>
       <h1>Home</h1>
       <p>{import.meta.env.VITE_TESTO}</p>
       <p>{import.meta.env.VITE_SOME_KEY}</p>

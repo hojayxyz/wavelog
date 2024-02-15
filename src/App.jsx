@@ -13,8 +13,8 @@ import Home from "./ui/Home";
 import { SidebarProvider } from "./context/SidebarContext";
 import { FriendsProvider } from "./context/FriendsContext";
 import OpenseaTest from "./pages/OpenseaTest";
-import JazzRadio from "./components/JazzRadio";
 import FriendsList from "./pages/FriendsList";
+import Blog from "./pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -33,8 +33,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/jazz",
-        element: <JazzRadio />,
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/friendslist",

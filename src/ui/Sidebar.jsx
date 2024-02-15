@@ -12,6 +12,11 @@ function Sidebar() {
           <div>
             <ul className="m-5 flex flex-col space-y-3">
               <li>
+                <Link to="/" className=" text-blue-500 hover:text-blue-600">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/friendslist"
                   className="text-blue-500 hover:text-blue-600"
