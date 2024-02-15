@@ -5,7 +5,8 @@ function Home() {
   return (
     <div className="p-5">
       <h1>Home</h1>
-      <p>{import.meta.env.TESTO}</p>
+      <p>{import.meta.env.VITE_TESTO}</p>
+      <p>{import.meta.env.VITE_SOME_KEY}</p>
       <p>{greetPerson ? greetPerson : "No Greet Person"}</p>
     </div>
   );
