@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "dotenv/config";
 
 const initialData = {
   total: {
@@ -20,7 +21,7 @@ function OpenseaTest() {
     method: "GET",
     headers: {
       accept: "application/json",
-      "x-api-key": import.meta.env.VITE_OSK,
+      "x-api-key": process.env.VITE_OSK,
     },
   };
   useEffect(function () {

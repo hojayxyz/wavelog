@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FriendsContext } from "../context/FriendsContext";
 
-function AddFriend({ adding }) {
+function AddFriend() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
   const { friendsList, setFriendsList } = useContext(FriendsContext);

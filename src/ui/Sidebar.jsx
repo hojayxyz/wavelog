@@ -8,15 +8,24 @@ function Sidebar() {
   return (
     <>
       {showSidebar ? (
-        <aside className="col-span-12 overflow-y-auto border-r-2 border-solid border-gray-100 bg-yellow-200 p-4 sm:col-span-4 md:col-span-3 lg:col-span-2">
+        <aside className="col-span-12 overflow-y-auto border-r-2 border-solid border-gray-100 bg-yellow-200 sm:col-span-4 md:col-span-3 lg:col-span-2">
           <div>
-            <span className="font-semibold text-stone-800">Sidebar</span>
-            <ul className="flex flex-col">
+            <ul className="m-5 flex flex-col space-y-3">
               <li>
-                <Link to="/friendslist">Friends</Link>
+                <Link
+                  to="/friendslist"
+                  className="text-blue-500 hover:text-blue-600"
+                >
+                  Friends
+                </Link>
               </li>
               <li>
-                <Link to="/openseatest">Opensea API test</Link>
+                <Link
+                  to="/openseatest"
+                  className="text-blue-500 hover:text-blue-600"
+                >
+                  Opensea API test
+                </Link>
               </li>
             </ul>
           </div>
