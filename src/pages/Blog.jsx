@@ -1,10 +1,7 @@
-import { useState } from "react";
 import supabase from "../components/supabase";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 function Blog() {
-  const [posts, setPosts] = useState([]);
-
   async function getPosts() {
     const { data: postings, error } = await supabase
       .from("postings")
