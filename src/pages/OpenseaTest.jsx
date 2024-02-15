@@ -15,7 +15,7 @@ const initialData = {
 function OpenseaTest() {
   const [isLoading, setIsLoading] = useState(false);
   const [nftStat, setNftStat] = useState(initialData);
-  const value = Netlify.env.get("OSK");
+  const value = process.env.get("OSK");
 
   const options = {
     method: "GET",
