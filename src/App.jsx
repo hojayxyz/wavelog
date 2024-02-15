@@ -1,20 +1,24 @@
-import {
-  // BrowserRouter,
-  // Navigate,
-  // Route,
-  // Routes,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { SidebarProvider } from "./context/SidebarContext";
+import { FriendsProvider } from "./context/FriendsContext";
+
+import OpenseaTest from "./pages/OpenseaTest";
+import FriendsList from "./pages/FriendsList";
+import Blog from "./pages/Blog";
 import Login from "./pages/Login";
 import Feed from "./pages/Feed";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
-import { SidebarProvider } from "./context/SidebarContext";
-import { FriendsProvider } from "./context/FriendsContext";
-import OpenseaTest from "./pages/OpenseaTest";
-import FriendsList from "./pages/FriendsList";
-import Blog from "./pages/Blog";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -54,11 +58,14 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <SidebarProvider>
-      <FriendsProvider>
-        <RouterProvider router={router} />
-      </FriendsProvider>
-    </SidebarProvider>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <SidebarProvider>
+        <FriendsProvider>
+          <RouterProvider router={router} />
+        </FriendsProvider>
+      </SidebarProvider>
+    </QueryClientProvider>
   );
 }
 
