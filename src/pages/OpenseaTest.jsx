@@ -15,13 +15,12 @@ const initialData = {
 function OpenseaTest() {
   const [isLoading, setIsLoading] = useState(false);
   const [nftStat, setNftStat] = useState(initialData);
-  const value = process.env.OSK;
 
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      "x-api-key": value,
+      "x-api-key": import.meta.env.VITE_OSK,
     },
   };
   useEffect(function () {
