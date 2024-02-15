@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "dotenv/config";
 
 const initialData = {
   total: {
@@ -16,12 +15,13 @@ const initialData = {
 function OpenseaTest() {
   const [isLoading, setIsLoading] = useState(false);
   const [nftStat, setNftStat] = useState(initialData);
+  const value = Netlify.env.get("OSK");
 
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      "x-api-key": process.env.VITE_OSK,
+      "x-api-key": value,
     },
   };
   useEffect(function () {
