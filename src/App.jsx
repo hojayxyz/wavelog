@@ -11,6 +11,11 @@ import Feed from "./pages/Feed";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
 import { SidebarProvider } from "./context/SidebarContext";
+import AddFriend from "./pages/AddFriend";
+import { FriendsProvider } from "./context/FriendsContext";
+import OpenseaTest from "./pages/OpenseaTest";
+import JazzRadio from "./components/JazzRadio";
+import FriendsList from "./pages/FriendsList";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +30,24 @@ const router = createBrowserRouter([
         element: <Feed />,
       },
       {
+        path: "/addfriend",
+        element: <AddFriend />,
+      },
+      {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/jazz",
+        element: <JazzRadio />,
+      },
+      {
+        path: "/friendslist",
+        element: <FriendsList />,
+      },
+      {
+        path: "/openseatest",
+        element: <OpenseaTest />,
       },
     ],
   },
@@ -35,7 +56,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <SidebarProvider>
-      <RouterProvider router={router} />
+      <FriendsProvider>
+        <RouterProvider router={router} />
+      </FriendsProvider>
     </SidebarProvider>
   );
 }

@@ -7,7 +7,7 @@ function Footer() {
         <span>Wavelog</span>
         <span>2024</span>
       </p>
-      <Link to="/feed">Open Feed</Link>{" "}
+      <Link to="/feed">Open Feed</Link>
     </div>
   );
 }
