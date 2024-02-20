@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Feed from "./pages/Feed";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -65,6 +66,24 @@ function App() {
           <RouterProvider router={router} />
         </FriendsProvider>
       </SidebarProvider>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: {
+            duration: 2000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontSize: "14px",
+            maxWidth: "500px",
+            padding: "14px 20px",
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 }

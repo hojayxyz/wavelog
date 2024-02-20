@@ -14,7 +14,7 @@ function AppLayout() {
       <Header />
       <Sidebar />
       <main
-        className={`${showSidebar ? "col-span-12 sm:col-span-8 md:col-span-9 lg:col-span-10" : "col-span-12"} bg-green-200 p-5`}
+        className={`${showSidebar ? "col-span-12 overflow-auto sm:col-span-8 md:col-span-9 lg:col-span-10" : "col-span-12 overflow-auto"} bg-green-200 p-5`}
       >
         <Outlet />
       </main>

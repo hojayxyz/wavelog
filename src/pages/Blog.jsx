@@ -1,7 +1,12 @@
+import toast from "react-hot-toast";
 import supabase from "../components/supabase";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import CreateBlogPost from "../components/CreateBlogPost";
+import { useState } from "react";
 
 function Blog() {
+  const [showCreatePostForm, setShowCreatePostForm] = useState(true);
+
   async function getPosts() {
     const { data: postings, error } = await supabase
       .from("postings")
@@ -31,12 +36,12 @@ function Blog() {
   const { isLoading: isDeleting, mutate } = useMutation({
     mutationFn: deletePost,
     onSuccess: () => {
-      alert("Post successfully deleted");
+      toast.success("Post successfully deleted");
       queryClient.invalidateQueries({
         queryKey: ["postings"],
       });
     },
-    onError: (err) => alert(err.message),
+    onError: (err) => toast.error(err.message),
   });
 
   const {
@@ -47,13 +52,25 @@ function Blog() {
     queryKey: ["postings"],
     queryFn: getPosts,
   });
+
   if (isLoading) return <div>Loading</div>;
   if (error) return <div>{error}</div>;
+
   return (
     <div>
-      <h2 className="my-2 text-center text-xl font-semibold">Blog postings</h2>
+      <div className="flex justify-between text-sm">
+        <h2 className="text-xl font-semibold">Blog postings</h2>
+
+        <button
+          className="mb-3 rounded-full bg-yellow-300 px-4 py-2"
+          onClick={() => setShowCreatePostForm((show) => !show)}
+        >
+          Add New Post
+        </button>
+      </div>
+      {showCreatePostForm && <CreateBlogPost />}
       {postingsData.map((post) => (
-        <div className="m-5 border-b-2 pb-5" key={post.id}>
+        <div className="m-5 max-w-screen-lg border-b-2 pb-5" key={post.id}>
           <span>{post.id}</span>
           <h3 className="font-semibold">{post.post_title}</h3>
           <p>{post.post_content}</p>
